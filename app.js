@@ -10,7 +10,7 @@ const address = process.env.ADDRESS;
 app.use(express.static(path.join(__dirname, 'templates')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'templates', 'home.html'));
+    res.sendFile(path.join(__dirname, 'templates', 'vicos.html'));
 });
 
 app.listen(port, address, () => {

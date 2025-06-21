@@ -16,8 +16,8 @@ body {
     position: fixed;
     top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200px;
+    transform: translate(-50%, -20%);
+    width: 230px;
     height: auto;
     pointer-events: none;
     filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.25));
@@ -74,11 +74,11 @@ body {
 }
 
 #toggleButton {
-    height: 35px;
+    height: 34px;
     width: 35px;
     position: absolute;
     bottom: -1px; /* has to be set to -1 or it doesnt line up*/
-    left: 10px;
+    left: 5px;
     border: none;
     cursor: pointer;
     background: #C5C5C5 linear-gradient(to top, #C5C5C5 98%, #ffffff 2%);
