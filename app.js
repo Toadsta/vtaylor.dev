@@ -10,6 +10,14 @@ const address = process.env.ADDRESS;
 app.use(express.static(path.join(__dirname, 'templates')));
 
 app.get('/', (req, res) => {
+    res.redirect('/about');
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'templates', 'home.html'));
+});
+
+app.get('/vicos', (req, res) => {
     res.sendFile(path.join(__dirname, 'templates', 'vicos.html'));
 });
 
