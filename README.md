@@ -1,28 +1,35 @@
-# victoriataylor.xyz - A Node.js Website
+# vtaylor.dev - A Node.js Website
 
-Welcome to victoriataylor.xyz, my personal website powered by Node.js. This project marks my foray into Node.js development and my first venture into JavaScript programming. The website showcases my skills, projects, and experiences in the field.
+vtaylor.dev is my personal website that I mainly made to just learn 
+some more web programming skills. The website is a general about me 
+site with links to my socials. It also contains VicOS which is meant to 
+replicate the feel of Windows 95 because I thought [Teethy.ca](https://teethy.ca) 
+was really cool
 
 ## Features and Technologies Used
 
-- **Node.js**: The website is built using Node.js, a powerful JavaScript runtime environment.
-- **Bulma**: I have utilized Bulma for CSS, enabling me to create a responsive and visually appealing website.
+- **Node.js**: The website is built using Node.js, a JavaScript runtime environment.
+- **HTML/CSS/JS**: General web programming shenanigans
+- **EJS**: I decided to use EJS, so I can embed other pages into the base. This is similar to flask
 
-## Project Goals
+[//]: # (## Project Goals)
 
-The primary goal of victoriataylor.xyz is to establish my online website that will contain blog posts, and my portfolio. By utilizing Node.js and Bulma, I aim to create an engaging and user-friendly website that highlights my skills, projects, and achievements.
+[//]: # ()
+[//]: # (The primary goal of vtaylor.dev is to establish my online website that will contain blog posts, and my portfolio. By utilizing Node.js and Bulma, I aim to create an engaging and user-friendly website that highlights my skills, projects, and achievements.)
 
 ## Project Structure
 
 Here's the structure of the project:
 ```
-├── app.js                      
-└── templates
-    ├── home.html               
-    ├── js                      
-    ├── css                     
-    └── static                  
-        ├── images              
-        └── audio   
+├── app.js         
+├── views               
+├── public
+    ├── audio              
+    ├── css                  
+    ├── images                    
+    └── javascript                                  
+└── views
+   └── base.ejs
 
 
 ```
@@ -37,8 +44,13 @@ To run this website locally, follow these steps:
 ```npm install```
 3. Start the Node.js server by running the following command:
 ```node app.js```
-4. Open your web browser and visit http://localhost:3000 or visit https://victoriataylor.xyz to visit my website!
+4. Open your web browser and visit http://localhost:3000 or visit https://vtaylor.dev to visit my website!
+
+## License
+MIT License, for more info please see LICENSE.md
 
 ## Credits
 
-All the code in this repo is my own unless stated otherwise, however the general design of the website I have replicated from George Wood https://gwood.dev
+The contents of the repository was made by me (Victoria Taylor): 
+1. The theme of the main webpage is heavily inspired by [Risotto](https://github.com/joeroe/risotto) for Hugo 
+2. The theme of VicOS is heavily inspired by [Teethy.ca](https://teethy.ca)

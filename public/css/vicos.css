@@ -1,5 +1,5 @@
 body {
-    background-color: #343fa3;
+    background-color: #008080;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -8,7 +8,7 @@ body {
     align-items: flex-start;  /* Align elements to the top */
     flex-direction: column;
     position: relative;  /* Make body the reference for absolute positioning */
-    cursor: url('templates/images/arrow.cur'), auto;
+    cursor: url('../images/arrow.cur'), auto;
 }
 
 /* Center the image without resizing */
