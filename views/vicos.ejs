@@ -13,7 +13,7 @@
 <!--    only active in november/december-->
     <div class="snowflakes"></div>
 
-    <button id="toggleButton">↓</button>
+
 
 
 <!--    TODO: Fix the audio toggle as it doesnt hide with the task bar-->
@@ -24,10 +24,16 @@
         </button>
     </a>
 
+    <button id="toggleButton">↓</button>
+    <button id="menuButton">
+        <img src="/images/menu.png" alt="menu">
+    </button>
+
     <div class="bottom-bar">
         <button id="playPauseButton">
             <img src="/images/audioOff.png" alt="Play/Pause">
         </button>
+        <div id="time">00:00</div>
     </div>
 
 
@@ -39,6 +45,7 @@
     <script src="/javascript/audioControl.js"></script>
     <script src="/javascript/taskBarHide.js"></script>
     <script src="/javascript/snow.js"></script>
+    <script src="/javascript/dateTime.js"></script>
 
 </body>
 </html>

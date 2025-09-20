@@ -23,30 +23,6 @@ body {
     filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.25));
 }
 
-/* Music Button Style */
-#playPauseButton {
-    position: absolute;
-    bottom: 2px;
-    right: 2px;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
-    /*color: white;*/
-    /*font-size: 10px;*/
-    /*padding: 0px;*/
-    /*filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.3));*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*align-items: center;*/
-}
-
-/* Image inside button */
-#playPauseButton img {
-    width: 75%;
-    height: auto;
-    /*filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.3));*/
-    /*margin-bottom: 6px;*/
-}
 
 /* App Button Style */
 #applicationsButton {
@@ -73,22 +49,63 @@ body {
     margin-bottom: 6px;
 }
 
-#toggleButton {
-    height: 34px;
-    width: 35px;
+/* Music Button Style */
+#playPauseButton {
     position: absolute;
-    bottom: -1px; /* has to be set to -1 or it doesnt line up*/
-    left: 5px;
-    border: none;
+    bottom: 5px;
+    right: 2px;
     cursor: pointer;
-    background: #C5C5C5 linear-gradient(to top, #C5C5C5 98%, #ffffff 2%);
+    border: none;
+    background-color: transparent;
+}
+
+/* Image inside button */
+#playPauseButton img {
+    width: 75%;
+    height: auto;
+}
+
+#time{
+    position: absolute;
+    bottom: 12px;
+    right: 50px;
+    border: none;
+    background-color: transparent;
+}
+
+#toggleButton {
+    position: absolute;
+    z-index: 100;
+    height: 45px;
+    width: 35px;
+    bottom: 0;
+    cursor: pointer;
+    background: linear-gradient(to top, #C5C5C5 98%, #ffffff 2%);
+}
+
+#menuButton {
+    position: absolute;
+    z-index: 100;
+    height: 45px;
+    width: 100px;
+    left: 35px;
+    bottom: 0;
+    cursor: pointer;
+    background: linear-gradient(to top, #C5C5C5 98%, #ffffff 2%);
+}
+#menuButton img {
+    width: auto;
+    height: 32px;
 }
 
 .bottom-bar {
-    height: 35px;
+    position: absolute;
+    z-index: 0;
+    height: 45px;
+    bottom: 0;
     width: 100%;
-    background: linear-gradient(to top, #C5C5C5 98%, #ffffff 2%);
     display: flex;
+    background: linear-gradient(to top, #C5C5C5 98%, #ffffff 2%);
     transition: height 0.3s ease;
 }
 
@@ -97,6 +114,7 @@ body {
     padding: 0;
     overflow: hidden;
 }
+
 
 
 

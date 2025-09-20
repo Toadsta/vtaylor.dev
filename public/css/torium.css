@@ -19,7 +19,7 @@ body {
 }
 
 .section-left {
-    padding: 15px 15px 15px 15px;
+    padding: 8px 15px;
     background-color: #e9eef6;
     max-width: 780px;
     flex: 2;

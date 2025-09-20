@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    if (month === 10 || month === 11) {
+    if (month === 10 || month === 11 || month === 0) {
         function createSnowflake() {
             if (snowflakesContainer.children.length >= maxSnowflakes) {
                 snowflakesContainer.removeChild(snowflakesContainer.firstChild);
