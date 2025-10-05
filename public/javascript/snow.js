@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const snowflakesContainer = document.querySelector('.snowflakes');
 
-    // var & const
     const maxSnowflakes = 100;
-
     const minSnowSize = 2;
     const maxSnowSize = 4;
 
@@ -12,9 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const d = new Date();
     let month = d.getMonth();
-
-
-    //snow
 
     function getRandomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -30,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
             snowflake.classList.add('snowflake');
 
             // Randomise snowflake's horizontal position, animation duration, and size
-            const xPosition = Math.random() * window.innerWidth;
+            const xPosition = Math.random() * blogWindow.innerWidth;
             const animationDuration = getRandomNumber(minAniDur, maxAniDur);
             const snowflakeSize = getRandomNumber(minSnowSize, maxSnowSize);
 

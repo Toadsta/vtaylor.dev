@@ -1,11 +1,8 @@
-// Get the audio and button elements
 const audio = document.getElementById('audio');
 const playPauseButton = document.getElementById('playPauseButton');
 
-// Set audio volume
 audio.volume = 0.2;
 
-// Function to toggle audio play/pause
 function toggleAudio() {
     if (audio.paused) {
         audio.play();
@@ -16,5 +13,4 @@ function toggleAudio() {
     }
 }
 
-// Add an event listener to the button to toggle play/pause
 playPauseButton.addEventListener('click', toggleAudio);

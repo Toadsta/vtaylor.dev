@@ -2,41 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>vicos</title>
+    <title>VicOS 3 - vtaylor.dev</title>
+    <link rel="icon" type="image/x-icon" href="/images/VicOS95-Fav.png">
     <link rel="stylesheet" href="/css/vicos.css">
     <link rel="stylesheet" href="/css/snow.css">
 </head>
 
 <body>
-    <img id="logoImage" src="/images/3.1.png" alt="Windows 3.1 Logo">
 
-<!--    only active in november/december-->
+    <img id="logoImage" src="/images/VicOS.png" alt="Windows 3.1 Logo">
     <div class="snowflakes"></div>
 
-
-
-
-<!--    TODO: Fix the audio toggle as it doesnt hide with the task bar-->
-    <a href="/about" id="applicationsLink" style="text-decoration: none;">
-        <button id="applicationsButton">
-            <img src="/images/applications.png" alt="Applications">
-            back to about
+    <div class="shelf">
+        <button class="icon-button">
+            <img src="/images/My Computer.ico" alt="Computer">
+            <span>my computer</span>
         </button>
-    </a>
 
-    <button id="toggleButton">↓</button>
-    <button id="menuButton">
-        <img src="/images/menu.png" alt="menu">
-    </button>
-
-    <div class="bottom-bar">
-        <button id="playPauseButton">
-            <img src="/images/audioOff.png" alt="Play/Pause">
+        <button class="icon-button">
+            <img src="/images/trash.ico" alt="trash">
+            <span>trash can</span>
         </button>
-        <div id="time">00:00</div>
+
+        <button class="icon-button" id="openBlog">
+            <img src="/images/Blog book.ico" alt="Blog">
+            <span>my blog</span>
+        </button>
+
+        <button class="icon-button">
+            <img src="/images/AOL.ico" alt="message me">
+            <span>AOL</span>
+        </button>
+
+
+        <a href="/about" class="icon-link">
+            <button class="icon-button">
+                <img src="/images/Help book.ico" alt="About">
+                <span>back to about</span>
+            </button>
+        </a>
     </div>
 
+    <div class="window" id="windowBlog">
+        <div class="window-menu" id="windowMenuBlog">
+            My Blog
+            <button class="window-close" id="windowCloseButtonBlog">X</button>
+        </div>
+        <div class="window-content" id="windowContentBlog">
+            test2
+        </div>
+    </div>
 
+    <div id="bottom-bar">
+        <div id="indent">
+            <button id="playPauseButton">
+                <img src="/images/audioOff.png" alt="Play/Pause">
+            </button>
+            <div id="time">00:00</div>
+        </div>
+
+    </div>
 
     <!-- Audio Element -->
     <audio id="audio" src="/audio/luma%208%20bit.mp3" loop></audio>
@@ -46,6 +71,9 @@
     <script src="/javascript/taskBarHide.js"></script>
     <script src="/javascript/snow.js"></script>
     <script src="/javascript/dateTime.js"></script>
+    <script src="/javascript/menuShelf.js"></script>
+    <script src="/javascript/windowShowHide.js"></script>
+
 
 </body>
 </html>

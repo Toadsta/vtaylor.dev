@@ -1,119 +1,144 @@
 body {
-    background-color: #008080;
+    background-color: #45a19f;
     margin: 0;
     padding: 0;
     height: 100vh;
     display: flex;
-    justify-content: center;  /* Centers horizontally */
-    align-items: flex-start;  /* Align elements to the top */
+    justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
-    position: relative;  /* Make body the reference for absolute positioning */
+    position: relative;
     cursor: url('../images/arrow.cur'), auto;
 }
 
-/* Center the image without resizing */
+
 #logoImage {
     position: fixed;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -20%);
-    width: 230px;
+    width: 275px;
     height: auto;
     pointer-events: none;
-    filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.4));
 }
 
-
-/* App Button Style */
-#applicationsButton {
+.shelf {
     position: absolute;
-    top: 75px;
-    left: 10px;
-    padding: 5px;
+    left: 5px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.icon-link { text-decoration: none; }
+
+.icon-button {
+    position: static;
+    padding: 8px;
+    width: 75px;
     border: none;
     cursor: pointer;
     color: white;
     font-size: 10px;
     background-color: transparent;
-    filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(5px 5px 2px rgba(0,0,0,0.3));
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
-/* Image inside button */
-#applicationsButton img {
-    width: 60%;
+.icon-button img {
+    width: 40px;
     height: auto;
-    filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.3));
     margin-bottom: 6px;
+    display: block;
+}
+.icon-button span { display:block; text-align:center; }
+
+.window{
+    top: 5%;
+    left: 10%;
+    right: 10%;
+    bottom: 20%;
+    position: absolute;
+    background-color: #92cac7;
+    outline-color: white;
+    width: 80%;
+    height: 80%;
+    z-index: 100;
+    border: 8px double #217572;
+    border-radius: 6px; /* optional */
+}
+.window.hide{
+    display: none;
 }
 
-/* Music Button Style */
+.window-menu{
+    background-color: #217572;
+    width: 100%;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+.window-menu.hide{
+    display: none;
+}
+
+.window-close {
+    font-weight: bolder;
+    border: 2px solid #92cac7 ;
+    background: none;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    z-index: 300;
+    color: white;
+    cursor: pointer;
+}
+.window-close.hide{
+    display: none;
+}
+
 #playPauseButton {
     position: absolute;
     bottom: 5px;
-    right: 2px;
+    right: 50px;
     cursor: pointer;
     border: none;
     background-color: transparent;
+
 }
 
-/* Image inside button */
 #playPauseButton img {
-    width: 75%;
+    width: 60%;
     height: auto;
 }
 
 #time{
     position: absolute;
-    bottom: 12px;
-    right: 50px;
+    bottom: 11px;
+    right: 17px;
     border: none;
     background-color: transparent;
 }
 
-#toggleButton {
+#bottom-bar {
     position: absolute;
-    z-index: 100;
-    height: 45px;
-    width: 35px;
-    bottom: 0;
-    cursor: pointer;
-    background: linear-gradient(to top, #C5C5C5 98%, #ffffff 2%);
-}
-
-#menuButton {
-    position: absolute;
-    z-index: 100;
-    height: 45px;
-    width: 100px;
-    left: 35px;
-    bottom: 0;
-    cursor: pointer;
-    background: linear-gradient(to top, #C5C5C5 98%, #ffffff 2%);
-}
-#menuButton img {
-    width: auto;
-    height: 32px;
-}
-
-.bottom-bar {
-    position: absolute;
-    z-index: 0;
-    height: 45px;
+    z-index: 200;
+    height: 40px;
     bottom: 0;
     width: 100%;
     display: flex;
-    background: linear-gradient(to top, #C5C5C5 98%, #ffffff 2%);
-    transition: height 0.3s ease;
+    background: linear-gradient(to top, #d6d6d6 96%, #ffffff 4%);
 }
 
-.bottom-bar.hidden {
-    height: 0;
-    padding: 0;
-    overflow: hidden;
-}
 
 
 
