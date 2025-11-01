@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
             snowflake.classList.add('snowflake');
 
             // Randomise snowflake's horizontal position, animation duration, and size
-            const xPosition = Math.random() * blogWindow.innerWidth;
+            const xPosition = Math.random() * window.innerWidth;
             const animationDuration = getRandomNumber(minAniDur, maxAniDur);
             const snowflakeSize = getRandomNumber(minSnowSize, maxSnowSize);
 
