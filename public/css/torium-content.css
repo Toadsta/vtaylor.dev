@@ -6,8 +6,8 @@ p{
 }
 .title{
     font-size: 16px;
-    color: #768a9f;
+    color: var(--color-text-muted);
 }
 .content{
-    color: #768a9f;
+    color: var(--color-text-muted);
 }

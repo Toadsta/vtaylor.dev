@@ -1,8 +1,61 @@
+:root {
+    --color-bg: #f0eee4;
+    --color-panel-bg: #faf9f5;
+    --color-text: #33312b;
+    --color-text-muted: #83807a;
+    --color-badge-bg: #6b6862;
+    --color-badge-text: #f0eee4;
+    --color-accent: #5cccaa;
+    --color-footer-link: #6b6862;
+    color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #1e1e1c;
+        --color-panel-bg: #2a2a27;
+        --color-text: #eceae1;
+        --color-text-muted: #a6a399;
+        --color-badge-bg: #46453f;
+        --color-badge-text: #eceae1;
+        --color-accent: #5cccaa;
+        --color-footer-link: #b5b2a8;
+        color-scheme: dark;
+    }
+}
+
+:root[data-theme="light"] {
+    --color-bg: #f0eee4;
+    --color-panel-bg: #faf9f5;
+    --color-text: #33312b;
+    --color-text-muted: #83807a;
+    --color-badge-bg: #6b6862;
+    --color-badge-text: #f0eee4;
+    --color-accent: #5cccaa;
+    --color-footer-link: #6b6862;
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    --color-bg: #1e1e1c;
+    --color-panel-bg: #2a2a27;
+    --color-text: #eceae1;
+    --color-text-muted: #a6a399;
+    --color-badge-bg: #46453f;
+    --color-badge-text: #eceae1;
+    --color-accent: #5cccaa;
+    --color-footer-link: #b5b2a8;
+    color-scheme: dark;
+}
+
 body {
     display: flex;
     flex-direction: row;
-    background-color: #cbdaea;
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     margin: 0;
+    transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .main-container{
@@ -16,17 +69,13 @@ body {
 .container {
     display: flex;
     flex-direction: row;
+    flex: 1;
 }
 
 .section-left {
-    padding: 8px 15px;
-    background-color: #e9eef6;
-    max-width: 780px;
+    padding: 28px;
+    background-color: var(--color-panel-bg);
     flex: 2;
-}
-
-.section-right {
-    flex: 1;
 }
 
 .flex-boxes {
@@ -44,5 +93,9 @@ body {
 @media (max-width: 720px) {
     .container {
         flex-direction: column;
+    }
+
+    .section-left {
+        padding: 16px;
     }
 }

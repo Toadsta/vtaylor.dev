@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌙 Victoria Taylor</title>
+    <title>🌙 Victoria Taylor — <%= title %></title>
     <link rel="stylesheet" href="/css/torium.css">
     <link rel="stylesheet" href="/css/torium-nav-foot.css">
     <link rel="stylesheet" href="/css/torium-misc.css">
     <link rel="stylesheet" href="/css/torium-content.css">
+    <link rel="stylesheet" href="/css/torium-about.css">
 </head>
 
 <body>
@@ -19,19 +20,16 @@
         <a class="nav-logo fira-mono-bold">[tori] $ <span class="blink">▋</span></a>
         <div class="nav-items">
             <a class="home" href="/about">
-                <span class="alt-color">./</span><span class="underlined">about</span>
+                <span class="fira-mono-bold">./</span>about
             </a>
             <a href="/blog">
-                <span class="alt-color">./</span><span class="underlined">blog</span>
+                <span class="fira-mono-bold">./</span>blog
             </a>
-            <a href="/contact">
-                <span class="alt-color">./</span><span class="underlined">contact</span>
-            </a>
-            <a href="https://github.com/Toadsta">
-                <span class="alt-color">./</span><span class="underlined">projects</span>
+            <a href="/projects">
+                <span class="fira-mono-bold">./</span>projects
             </a>
             <a href="/vicos">
-                <span class="alt-color">./</span><span class="underlined">vicos</span>
+                <span class="fira-mono-bold">./</span>vicos
             </a>
         </div>
     </nav>
@@ -40,18 +38,21 @@
         <div class="section-left fira-mono-regular">
             <%- include(body) %>
         </div>
-        <div class="section-right fira-mono-regular"></div>
-
     </div>
 
     <footer class="fira-mono-regular">
-        Copyright 2025, Victoria Taylor <br>
-        Inspired by the <a class="fira-mono-bold" href="https://github.com/joeroe/risotto">Rissoto</a> theme for
-        <a class="fira-mono-bold" href="https://github.com/gohugoio/hugo">Hugo</a>
+        <div class="footer-text">
+            Copyright <%= new Date().getFullYear() %>, Victoria Taylor <br>
+            Inspired by the <a class="fira-mono-bold" href="https://github.com/joeroe/risotto">Rissoto</a> theme for
+            <a class="fira-mono-bold" href="https://github.com/gohugoio/hugo">Hugo</a>
+        </div>
+        <button id="theme-toggle" aria-label="Toggle dark mode"></button>
     </footer>
 </div>
 
 <div class="flex-box"></div>
+
+<script src="/javascript/themeToggle.js"></script>
 
 </body>
 </html>

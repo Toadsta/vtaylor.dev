@@ -4,12 +4,12 @@ nav {
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin: 10px;
+    margin: 10px 0;
 }
 
 .nav-logo {
-    background-color: #768a9f;
-    color: #cbdaea;
+    background-color: var(--color-badge-bg);
+    color: var(--color-badge-text);
     margin-right: 10px;
     padding: 5px 5px 5px 5px;
     align-self: flex-start;
@@ -25,7 +25,7 @@ nav .nav-items {
 }
 
 nav a {
-    color: #768a9f;
+    color: var(--color-text-muted);
     text-align: center;
     text-decoration: none;
     padding: 10px 10px;
@@ -33,22 +33,22 @@ nav a {
 }
 
 nav a:hover {
-    color: white;
+    color: var(--color-accent);
 }
 
 
 .alt-color {
-    color: #e39c18;
+    color: var(--color-accent);
     text-decoration: none;
 }
 
 /* footer */
 footer {
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    color: #768a9f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    color: var(--color-text-muted);
     padding: 20px 16px;
     margin-top: 30px;
     font-size: 12px;
@@ -56,7 +56,33 @@ footer {
 
 footer a {
     text-decoration: none;
-    color: #5a6b7c;
+    color: var(--color-footer-link);
+}
+
+#theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: var(--color-text-muted);
+}
+
+#theme-toggle:hover {
+    color: var(--color-accent);
+}
+
+#theme-toggle svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .blink {

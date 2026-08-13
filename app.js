@@ -20,15 +20,15 @@ app.get('/', (req, res) => {
 
 // Render the about page using EJS
 app.get('/about', (req, res) => {
-    res.render('base', { body: 'about' });
+    res.render('base', { body: 'about', title: 'about' });
 });
 
 app.get('/blog', (req, res) => {
-    res.render('base', { body: 'blog' });
+    res.render('base', { body: 'blog', title: 'blog' });
 });
 
-app.get('/contact', (req, res) => {
-    res.render('base', { body: 'contact' });
+app.get('/projects', (req, res) => {
+    res.render('base', { body: 'projects', title: 'projects' });
 });
 
 // Serve the vicos page as an HTML file
