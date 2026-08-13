@@ -44,9 +44,10 @@ To run this website locally, follow these steps:
 4. Open your web browser and visit http://localhost:3000 or visit https://vtaylor.dev to visit my website!
 
 ## License
-MIT License, for more info please see LICENSE.md
 
-## Credits
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+
+## Acknowledgments
 
 The contents of the repository was made by me (Victoria Taylor): 
 1. The theme of the main webpage is heavily inspired by [Risotto](https://github.com/joeroe/risotto) for Hugo
