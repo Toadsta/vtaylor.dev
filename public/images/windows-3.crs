@@ -1,9 +1,0 @@
-﻿[Arrow]
-Path=arrow.cur
-
-[AppStarting]
-Path=appstatic.cur
-
-[Wait]
-Path=appbusystatic.cur
-

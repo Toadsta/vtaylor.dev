@@ -2,36 +2,33 @@
 
 vtaylor.dev is my personal website that I mainly made to just learn 
 some more web programming skills. The website is a general about me 
-site with links to my socials. It also contains VicOS which is meant to 
-replicate the feel of Windows 95 because I thought [Teethy.ca](https://teethy.ca) 
-was really cool
+site with links to my socials, a projects page, and a blog.
+
+VicOS, the Windows 95-style desktop pastiche that used to live here, has moved to
+its own repo: [Toadsta/VicOS](https://github.com/Toadsta/VicOS).
 
 ## Features and Technologies Used
 
 - **Node.js**: The website is built using Node.js, a JavaScript runtime environment.
 - **HTML/CSS/JS**: General web programming shenanigans
 - **EJS**: I decided to use EJS, so I can embed other pages into the base. This is similar to flask
-
-[//]: # (## Project Goals)
-
-[//]: # ()
-[//]: # (The primary goal of vtaylor.dev is to establish my online website that will contain blog posts, and my portfolio. By utilizing Node.js and Bulma, I aim to create an engaging and user-friendly website that highlights my skills, projects, and achievements.)
+- **Light/dark theme**: follows system preference by default, with a manual toggle in the footer
 
 ## Project Structure
 
 Here's the structure of the project:
 ```
-├── app.js         
-├── views               
-├── public
-    ├── audio              
-    ├── css                  
-    ├── images                    
-    └── javascript                                  
-└── views
-   └── base.ejs
-
-
+├── app.js
+├── views
+│   ├── base.ejs
+│   ├── about.ejs
+│   ├── blog.ejs
+│   └── projects.ejs
+└── public
+    ├── css
+    ├── fonts
+    ├── images
+    └── javascript
 ```
 
 
@@ -52,5 +49,4 @@ MIT License, for more info please see LICENSE.md
 ## Credits
 
 The contents of the repository was made by me (Victoria Taylor): 
-1. The theme of the main webpage is heavily inspired by [Risotto](https://github.com/joeroe/risotto) for Hugo 
-2. The theme of VicOS is heavily inspired by [Teethy.ca](https://teethy.ca)
+1. The theme of the main webpage is heavily inspired by [Risotto](https://github.com/joeroe/risotto) for Hugo

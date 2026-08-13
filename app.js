@@ -31,11 +31,6 @@ app.get('/projects', (req, res) => {
     res.render('base', { body: 'projects', title: 'projects' });
 });
 
-// Serve the vicos page as an HTML file
-app.get('/vicos', (req, res) => {
-    res.render('vicos');
-});
-
 // Start the server
 app.listen(port, address, () => {
     console.log(`Server is running on http://${address}:${port}`);
