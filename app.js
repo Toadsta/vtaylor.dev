@@ -20,15 +20,15 @@ app.get('/', (req, res) => {
 
 // Render the about page using EJS
 app.get('/about', (req, res) => {
-    res.render('base', { body: 'about', title: 'about' });
+    res.render('base', { body: 'about', title: 'about', assetVersion: Date.now() });
 });
 
 app.get('/blog', (req, res) => {
-    res.render('base', { body: 'blog', title: 'blog' });
+    res.render('base', { body: 'blog', title: 'blog', assetVersion: Date.now() });
 });
 
 app.get('/projects', (req, res) => {
-    res.render('base', { body: 'projects', title: 'projects' });
+    res.render('base', { body: 'projects', title: 'projects', assetVersion: Date.now() });
 });
 
 // Start the server

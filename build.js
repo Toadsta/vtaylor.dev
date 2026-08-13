@@ -6,6 +6,8 @@ const outDir = path.join(__dirname, 'dist');
 const viewsDir = path.join(__dirname, 'views');
 const publicDir = path.join(__dirname, 'public');
 
+const assetVersion = process.env.GITHUB_SHA ? process.env.GITHUB_SHA.slice(0, 8) : String(Date.now());
+
 const pages = [
     { file: 'index.html', body: 'about', title: 'about' },
     { file: 'about.html', body: 'about', title: 'about' },
@@ -19,7 +21,7 @@ fs.mkdirSync(outDir, { recursive: true });
 for (const page of pages) {
     const html = ejs.render(
         fs.readFileSync(path.join(viewsDir, 'base.ejs'), 'utf8'),
-        { body: page.body, title: page.title },
+        { body: page.body, title: page.title, assetVersion },
         { views: [viewsDir], filename: path.join(viewsDir, 'base.ejs') }
     );
     fs.writeFileSync(path.join(outDir, page.file), html);
