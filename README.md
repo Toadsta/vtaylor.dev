@@ -1,4 +1,4 @@
-# vtaylor.dev - A Node.js Website
+# vtaylor.dev
 
 vtaylor.dev is my personal website that I mainly made to just learn 
 some more web programming skills. The website is a general about me 
