@@ -1,4 +1,5 @@
 # vtaylor.dev
+![license](https://img.shields.io/github/license/Toadsta/vtaylor.dev) ![Code size](https://img.shields.io/github/languages/code-size/Toadsta/vtaylor.dev)
 
 vtaylor.dev is my personal website that I mainly made to just learn 
 some more web programming skills. The website is a general about me 
