@@ -21,7 +21,11 @@ app.get('/', (req, res) => {
 
 // Render the about page using EJS
 app.get('/about', (req, res) => {
-    res.render('base', { body: 'about', title: 'about', assetVersion: Date.now() });
+    const posts = loadContent(path.join(__dirname, 'content/blog'));
+    const projects = loadContent(path.join(__dirname, 'content/projects'));
+    const pinnedPost = posts.find((p) => p.pin === 1);
+    const pinnedProject = projects.find((p) => p.pin === 1);
+    res.render('base', { body: 'about', title: 'about', assetVersion: Date.now(), pinnedPost, pinnedProject });
 });
 
 app.get('/blog', (req, res) => {

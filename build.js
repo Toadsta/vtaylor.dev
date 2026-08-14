@@ -11,10 +11,12 @@ const assetVersion = process.env.GITHUB_SHA ? process.env.GITHUB_SHA.slice(0, 8)
 
 const posts = loadContent(path.join(__dirname, 'content/blog'));
 const projects = loadContent(path.join(__dirname, 'content/projects'));
+const pinnedPost = posts.find((p) => p.pin === 1);
+const pinnedProject = projects.find((p) => p.pin === 1);
 
 const pages = [
-    { file: 'index.html', body: 'about', title: 'about' },
-    { file: 'about.html', body: 'about', title: 'about' },
+    { file: 'index.html', body: 'about', title: 'about', locals: { pinnedPost, pinnedProject } },
+    { file: 'about.html', body: 'about', title: 'about', locals: { pinnedPost, pinnedProject } },
     { file: 'blog.html', body: 'blog', title: 'blog', locals: { posts } },
     { file: 'projects.html', body: 'projects', title: 'projects', locals: { projects } },
 ];
