@@ -2,6 +2,7 @@ const ejs = require('ejs');
 const fs = require('fs');
 const path = require('path');
 const { loadContent } = require('./lib/content');
+const { errorPages } = require('./lib/errors');
 
 const outDir = path.join(__dirname, 'dist');
 const viewsDir = path.join(__dirname, 'views');
@@ -19,7 +20,12 @@ const pages = [
     { file: 'about.html', body: 'about', title: 'about', locals: { pinnedPost, pinnedProject } },
     { file: 'blog.html', body: 'blog', title: 'blog', locals: { posts } },
     { file: 'projects.html', body: 'projects', title: 'projects', locals: { projects } },
+    { file: '404.html', body: 'error', title: '404 error', locals: { code: 404, message: 'no such file or directory' } },
 ];
+
+for (const [code, message] of Object.entries(errorPages)) {
+    pages.push({ file: `${code}.html`, body: 'error', title: `${code} error`, locals: { code: Number(code), message } });
+}
 
 for (const post of posts) {
     pages.push({ file: `blog/${post.slug}.html`, body: 'blog-post', title: post.title, locals: { post } });
@@ -44,5 +50,6 @@ for (const page of pages) {
 }
 
 fs.cpSync(publicDir, outDir, { recursive: true });
+fs.writeFileSync(path.join(outDir, 'CNAME'), 'vtaylor.dev\n');
 
 console.log(`Built ${pages.length} pages to ${outDir}`);

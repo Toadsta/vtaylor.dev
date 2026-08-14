@@ -6,7 +6,7 @@ p{
 }
 .title{
     font-size: 16px;
-    color: var(--color-text-muted);
+    color: var(--color-footer-link);
 }
 .content{
     color: var(--color-text-muted);
@@ -306,4 +306,19 @@ p{
         max-width: 45%;
         margin: 0 16px 12px 0;
     }
+}
+
+.error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.error-cat {
+    max-width: 320px;
+    width: 100%;
+    border-radius: 4px;
+    display: block;
 }
