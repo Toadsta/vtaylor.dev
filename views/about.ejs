@@ -18,8 +18,26 @@
     </div>
     <div class="about-content">
         <h1 class="title"># about me</h1>
-        <p class="content">Hi! I'm Victoria a trainee computer science teacher. </p>
-        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p class="content">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="content">Hi! I'm Victoria, a newly qualified computer science teacher in the West Midlands, now in the final year of the Teach First programme.</p>
+        <p class="content">I never got to study computer science at school because there was no one to teach it, which is a big part of why I do this now. Before that I studied Computer Science (Cyber Security) at Newcastle University, and left with a 2:1. Outside the classroom I still build things: a macOS menu bar app for switching DNS providers, this site's blog and projects system, and a retro Windows 95 style desktop for the browser.</p>
+        <p class="content">When I'm not teaching or coding you'll probably find me building computers or fixing someone's wifi. Everything I make lives on my GitHub.</p>
+        <div class="about-highlights">
+            <% if (pinnedPost) { %>
+            <a class="about-highlight-box" href="/blog/<%= pinnedPost.slug %>">
+                <svg class="pin-icon" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                <div class="about-highlight-label">blog</div>
+                <div class="about-highlight-title fira-mono-bold"><%= pinnedPost.title %></div>
+                <p class="about-highlight-excerpt"><%= pinnedPost.excerpt %></p>
+            </a>
+            <% } %>
+            <% if (pinnedProject) { %>
+            <a class="about-highlight-box" href="/projects/<%= pinnedProject.slug %>">
+                <svg class="pin-icon" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                <div class="about-highlight-label">projects</div>
+                <div class="about-highlight-title fira-mono-bold"><%= pinnedProject.title %></div>
+                <p class="about-highlight-excerpt"><%= pinnedProject.description %></p>
+            </a>
+            <% } %>
+        </div>
     </div>
 </div>

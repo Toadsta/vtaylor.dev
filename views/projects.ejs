@@ -1,2 +1,18 @@
-<h1 class="title">#projects</h1>
+<h1 class="title"># projects</h1>
+<% if (projects.length === 0) { %>
 <p class="content">coming soon — check back later.</p>
+<% } %>
+<div class="project-list">
+    <% projects.forEach(function(project) { %>
+    <a class="project-card" href="/projects/<%= project.slug %>">
+        <% if (project.pin != null) { %>
+        <svg class="pin-icon" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+        <% } %>
+        <div class="project-card-title fira-mono-bold"><%= project.title %></div>
+        <p class="project-card-description"><%= project.description %></p>
+        <div class="project-card-tech">
+            <% (project.tech || []).forEach(function(t) { %><span class="tech-tag"><%= t %></span><% }); %>
+        </div>
+    </a>
+    <% }); %>
+</div>

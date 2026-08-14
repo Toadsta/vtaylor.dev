@@ -52,3 +52,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 
 The contents of the repository was made by me (Victoria Taylor): 
 1. The theme of the main webpage is heavily inspired by [Risotto](https://github.com/joeroe/risotto) for Hugo
+2. Error pages use cat images from [http.cat](https://http.cat)
