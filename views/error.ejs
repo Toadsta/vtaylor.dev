@@ -2,5 +2,5 @@
 <div class="error-page">
     <img class="error-cat" src="https://http.cat/<%= code %>" alt="HTTP <%= code %> cat">
     <p class="content">.<%= typeof path !== 'undefined' && path ? path : '/error' %>: <%= message %></p>
-    <a class="post-back" href="/about"><span class="fira-mono-bold">./</span>cd back to safety</a>
+    <a class="post-back" href="<%= basePath %>/about"><span class="fira-mono-bold">./</span>cd back to safety</a>
 </div>

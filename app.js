@@ -19,6 +19,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// Make settings (name, tagline, socials, bio, etc.) available to every template
+app.use((req, res, next) => {
+    res.locals.settings = loadSingle(path.join(__dirname, 'content/settings.md'));
+    res.locals.basePath = '';
+    next();
+});
+
 // Redirect root to /about
 app.get('/', (req, res) => {
     res.redirect('/about');
@@ -26,12 +33,11 @@ app.get('/', (req, res) => {
 
 // Render the about page using EJS
 app.get('/about', (req, res) => {
-    const about = loadSingle(path.join(__dirname, 'content/about.md'));
     const posts = loadContent(path.join(__dirname, 'content/blog'));
     const projects = loadContent(path.join(__dirname, 'content/projects'));
     const pinnedPost = posts.find((p) => p.pin === 1);
     const pinnedProject = projects.find((p) => p.pin === 1);
-    res.render('base', { body: 'about', title: 'about', assetVersion: Date.now(), about, pinnedPost, pinnedProject });
+    res.render('base', { body: 'about', title: 'about', assetVersion: Date.now(), pinnedPost, pinnedProject });
 });
 
 app.get('/blog', (req, res) => {

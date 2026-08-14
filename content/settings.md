@@ -1,9 +1,12 @@
 ---
 name: "Victoria Taylor"
+tagline: "tori"
 photo: "/images/profile.jpg"
 github: "https://github.com/Toadsta"
 linkedin: "https://www.linkedin.com/in/toria-taylor/"
 email: "taylor-tori@proton.me"
+domain: "vtaylor.dev"
+secretLink: "https://vicos.vtaylor.dev/"
 ---
 Hi! I'm Victoria, a newly qualified computer science teacher in the West Midlands, now in the final year of the Teach First programme.
 

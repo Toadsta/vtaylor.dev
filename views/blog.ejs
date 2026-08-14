@@ -4,7 +4,7 @@
 <% } %>
 <div class="post-list">
     <% posts.forEach(function(post) { %>
-    <a class="post-list-item" href="/blog/<%= post.slug %>">
+    <a class="post-list-item" href="<%= basePath %>/blog/<%= post.slug %>">
         <% if (post.pin != null) { %>
         <svg class="pin-icon" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
         <% } %>

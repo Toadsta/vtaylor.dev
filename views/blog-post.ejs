@@ -1,4 +1,4 @@
-<a class="post-back" href="/blog"><span class="fira-mono-bold">./</span>back to blog</a>
+<a class="post-back" href="<%= basePath %>/blog"><span class="fira-mono-bold">./</span>back to blog</a>
 <div class="post-detail-header">
     <h1 class="post-detail-title fira-mono-bold"><%= post.title %></h1>
     <div class="post-detail-meta">
@@ -9,6 +9,6 @@
 </div>
 <div class="post-date"><%= new Date(post.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }) %></div>
 <div class="post-detail-body<%= post.image ? ' has-image' : '' %>">
-    <% if (post.image) { %><img class="post-detail-image" src="<%= post.image %>" alt="<%= post.title %>"><% } %>
+    <% if (post.image) { %><img class="post-detail-image" src="<%= basePath %><%= post.image %>" alt="<%= post.title %>"><% } %>
     <div class="post-body content"><%- post.html %></div>
 </div>

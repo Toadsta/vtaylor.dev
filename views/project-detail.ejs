@@ -1,4 +1,4 @@
-<a class="post-back" href="/projects"><span class="fira-mono-bold">./</span>back to projects</a>
+<a class="post-back" href="<%= basePath %>/projects"><span class="fira-mono-bold">./</span>back to projects</a>
 <div class="project-detail-header">
     <h1 class="project-detail-title fira-mono-bold"><%= project.title %></h1>
     <div class="project-detail-meta">
@@ -20,6 +20,6 @@
     </div>
 </div>
 <div class="project-detail-body<%= project.image ? ' has-image' : '' %>">
-    <% if (project.image) { %><img class="project-detail-image" src="<%= project.image %>" alt="<%= project.title %>"><% } %>
+    <% if (project.image) { %><img class="project-detail-image" src="<%= basePath %><%= project.image %>" alt="<%= project.title %>"><% } %>
     <div class="post-body content"><%- project.html %></div>
 </div>

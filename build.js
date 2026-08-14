@@ -10,15 +10,17 @@ const publicDir = path.join(__dirname, 'public');
 
 const assetVersion = process.env.GITHUB_SHA ? process.env.GITHUB_SHA.slice(0, 8) : String(Date.now());
 
-const about = loadSingle(path.join(__dirname, 'content/about.md'));
+const settings = loadSingle(path.join(__dirname, 'content/settings.md'));
+const repoName = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split('/')[1] : '';
+const basePath = settings.domain ? '' : repoName ? `/${repoName}` : '';
 const posts = loadContent(path.join(__dirname, 'content/blog'));
 const projects = loadContent(path.join(__dirname, 'content/projects'));
 const pinnedPost = posts.find((p) => p.pin === 1);
 const pinnedProject = projects.find((p) => p.pin === 1);
 
 const pages = [
-    { file: 'index.html', body: 'about', title: 'about', locals: { about, pinnedPost, pinnedProject } },
-    { file: 'about.html', body: 'about', title: 'about', locals: { about, pinnedPost, pinnedProject } },
+    { file: 'index.html', body: 'about', title: 'about', locals: { pinnedPost, pinnedProject } },
+    { file: 'about.html', body: 'about', title: 'about', locals: { pinnedPost, pinnedProject } },
     { file: 'blog.html', body: 'blog', title: 'blog', locals: { posts } },
     { file: 'projects.html', body: 'projects', title: 'projects', locals: { projects } },
     { file: '404.html', body: 'error', title: '404 error', locals: { code: 404, message: 'no such file or directory' } },
@@ -42,7 +44,7 @@ fs.mkdirSync(outDir, { recursive: true });
 for (const page of pages) {
     const html = ejs.render(
         fs.readFileSync(path.join(viewsDir, 'base.ejs'), 'utf8'),
-        { body: page.body, title: page.title, assetVersion, ...(page.locals || {}) },
+        { body: page.body, title: page.title, assetVersion, settings, basePath, ...(page.locals || {}) },
         { views: [viewsDir], filename: path.join(viewsDir, 'base.ejs') }
     );
     const outPath = path.join(outDir, page.file);
@@ -51,6 +53,9 @@ for (const page of pages) {
 }
 
 fs.cpSync(publicDir, outDir, { recursive: true });
-fs.writeFileSync(path.join(outDir, 'CNAME'), 'vtaylor.dev\n');
+
+if (settings.domain) {
+    fs.writeFileSync(path.join(outDir, 'CNAME'), `${settings.domain}\n`);
+}
 
 console.log(`Built ${pages.length} pages to ${outDir}`);
