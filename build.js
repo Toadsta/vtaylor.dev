@@ -1,7 +1,7 @@
 const ejs = require('ejs');
 const fs = require('fs');
 const path = require('path');
-const { loadContent } = require('./lib/content');
+const { loadContent, loadSingle } = require('./lib/content');
 const { errorPages } = require('./lib/errors');
 
 const outDir = path.join(__dirname, 'dist');
@@ -10,14 +10,15 @@ const publicDir = path.join(__dirname, 'public');
 
 const assetVersion = process.env.GITHUB_SHA ? process.env.GITHUB_SHA.slice(0, 8) : String(Date.now());
 
+const about = loadSingle(path.join(__dirname, 'content/about.md'));
 const posts = loadContent(path.join(__dirname, 'content/blog'));
 const projects = loadContent(path.join(__dirname, 'content/projects'));
 const pinnedPost = posts.find((p) => p.pin === 1);
 const pinnedProject = projects.find((p) => p.pin === 1);
 
 const pages = [
-    { file: 'index.html', body: 'about', title: 'about', locals: { pinnedPost, pinnedProject } },
-    { file: 'about.html', body: 'about', title: 'about', locals: { pinnedPost, pinnedProject } },
+    { file: 'index.html', body: 'about', title: 'about', locals: { about, pinnedPost, pinnedProject } },
+    { file: 'about.html', body: 'about', title: 'about', locals: { about, pinnedPost, pinnedProject } },
     { file: 'blog.html', body: 'blog', title: 'blog', locals: { posts } },
     { file: 'projects.html', body: 'projects', title: 'projects', locals: { projects } },
     { file: '404.html', body: 'error', title: '404 error', locals: { code: 404, message: 'no such file or directory' } },

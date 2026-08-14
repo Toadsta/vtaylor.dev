@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-const { loadContent } = require('./lib/content');
+const { loadContent, loadSingle } = require('./lib/content');
 const { errorPages } = require('./lib/errors');
 
 const app = express();
@@ -26,11 +26,12 @@ app.get('/', (req, res) => {
 
 // Render the about page using EJS
 app.get('/about', (req, res) => {
+    const about = loadSingle(path.join(__dirname, 'content/about.md'));
     const posts = loadContent(path.join(__dirname, 'content/blog'));
     const projects = loadContent(path.join(__dirname, 'content/projects'));
     const pinnedPost = posts.find((p) => p.pin === 1);
     const pinnedProject = projects.find((p) => p.pin === 1);
-    res.render('base', { body: 'about', title: 'about', assetVersion: Date.now(), pinnedPost, pinnedProject });
+    res.render('base', { body: 'about', title: 'about', assetVersion: Date.now(), about, pinnedPost, pinnedProject });
 });
 
 app.get('/blog', (req, res) => {
