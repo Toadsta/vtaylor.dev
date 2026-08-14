@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
+const { loadContent } = require('./lib/content');
 
 const app = express();
 const port = process.env.PORT || 3000; // Default to 3000 if PORT is not set
@@ -28,7 +29,15 @@ app.get('/blog', (req, res) => {
 });
 
 app.get('/projects', (req, res) => {
-    res.render('base', { body: 'projects', title: 'projects', assetVersion: Date.now() });
+    const projects = loadContent(path.join(__dirname, 'content/projects'));
+    res.render('base', { body: 'projects', title: 'projects', assetVersion: Date.now(), projects });
+});
+
+app.get('/projects/:slug', (req, res) => {
+    const projects = loadContent(path.join(__dirname, 'content/projects'));
+    const project = projects.find((p) => p.slug === req.params.slug);
+    if (!project) return res.status(404).send('not found');
+    res.render('base', { body: 'project-detail', title: project.title, assetVersion: Date.now(), project });
 });
 
 // Start the server

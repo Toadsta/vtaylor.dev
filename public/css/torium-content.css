@@ -11,3 +11,139 @@ p{
 .content{
     color: var(--color-text-muted);
 }
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 16px;
+}
+
+.project-card {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 16px;
+    border: 1px solid var(--color-text-muted);
+    border-radius: 4px;
+}
+
+.project-card:hover {
+    border-color: var(--color-accent);
+}
+
+.pin-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.project-card-title {
+    color: var(--color-footer-link);
+    font-size: 15px;
+}
+
+.project-card-description {
+    color: var(--color-text-muted);
+    margin-top: 6px;
+}
+
+.project-card-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.tech-tag {
+    font-size: 11px;
+    color: var(--color-badge-text);
+    background-color: var(--color-badge-bg);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.project-detail-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.project-detail-title {
+    font-size: 24px;
+    color: var(--color-footer-link);
+    margin: 0;
+}
+
+.project-detail-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.project-detail-meta .project-card-tech {
+    margin-top: 0;
+}
+
+.project-meta-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.meta-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.meta-icon.icon-stroke {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.project-detail-body {
+    margin-top: 16px;
+}
+
+.project-detail-body.has-image {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.project-detail-image {
+    width: 260px;
+    max-width: 40%;
+    flex-shrink: 0;
+    border-radius: 4px;
+    display: block;
+}
+
+@media (max-width: 720px) {
+    .project-detail-body.has-image {
+        display: block;
+    }
+
+    .project-detail-image {
+        float: left;
+        width: 130px;
+        max-width: 45%;
+        margin: 0 16px 12px 0;
+    }
+}
