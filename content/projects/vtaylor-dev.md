@@ -1,7 +1,6 @@
 ---
 title: "vtaylor.dev"
 date: 2023-06-01
-pin: 2
 description: "The source code for this website, a personal site pre-rendered to static HTML and deployed on GitHub Pages."
 tech: ["Node.js", "Express", "EJS"]
 repo: "https://github.com/Toadsta/vtaylor.dev"
