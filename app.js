@@ -25,7 +25,15 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/blog', (req, res) => {
-    res.render('base', { body: 'blog', title: 'blog', assetVersion: Date.now() });
+    const posts = loadContent(path.join(__dirname, 'content/blog'));
+    res.render('base', { body: 'blog', title: 'blog', assetVersion: Date.now(), posts });
+});
+
+app.get('/blog/:slug', (req, res) => {
+    const posts = loadContent(path.join(__dirname, 'content/blog'));
+    const post = posts.find((p) => p.slug === req.params.slug);
+    if (!post) return res.status(404).send('not found');
+    res.render('base', { body: 'blog-post', title: post.title, assetVersion: Date.now(), post });
 });
 
 app.get('/projects', (req, res) => {

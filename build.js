@@ -9,14 +9,19 @@ const publicDir = path.join(__dirname, 'public');
 
 const assetVersion = process.env.GITHUB_SHA ? process.env.GITHUB_SHA.slice(0, 8) : String(Date.now());
 
+const posts = loadContent(path.join(__dirname, 'content/blog'));
 const projects = loadContent(path.join(__dirname, 'content/projects'));
 
 const pages = [
     { file: 'index.html', body: 'about', title: 'about' },
     { file: 'about.html', body: 'about', title: 'about' },
-    { file: 'blog.html', body: 'blog', title: 'blog' },
+    { file: 'blog.html', body: 'blog', title: 'blog', locals: { posts } },
     { file: 'projects.html', body: 'projects', title: 'projects', locals: { projects } },
 ];
+
+for (const post of posts) {
+    pages.push({ file: `blog/${post.slug}.html`, body: 'blog-post', title: post.title, locals: { post } });
+}
 
 for (const project of projects) {
     pages.push({ file: `projects/${project.slug}.html`, body: 'project-detail', title: project.title, locals: { project } });
