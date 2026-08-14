@@ -1,3 +1,5 @@
+<img src="public/images/apple-touch-icon.png" width="80">
+
 # vtaylor.dev
 ![license](https://img.shields.io/github/license/Toadsta/vtaylor.dev) ![Code size](https://img.shields.io/github/languages/code-size/Toadsta/vtaylor.dev)
 
