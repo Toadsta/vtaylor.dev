@@ -8,14 +8,6 @@
 
 @font-face {
     font-family: "Fira Mono";
-    src: url("/fonts/fira-mono-500.woff2") format("woff2");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Fira Mono";
     src: url("/fonts/fira-mono-700.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
@@ -25,12 +17,6 @@
 .fira-mono-regular {
     font-family: "Fira Mono", monospace;
     font-weight: 400;
-    font-style: normal;
-}
-
-.fira-mono-medium {
-    font-family: "Fira Mono", monospace;
-    font-weight: 500;
     font-style: normal;
 }
 

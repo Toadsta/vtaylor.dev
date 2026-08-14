@@ -36,12 +36,6 @@ nav a:hover {
     color: var(--color-accent);
 }
 
-
-.alt-color {
-    color: var(--color-accent);
-    text-decoration: none;
-}
-
 /* footer */
 footer {
     display: flex;

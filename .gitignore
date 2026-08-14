@@ -1,7 +1,4 @@
 /node_modules/
-/.idea/.name
-/.idea/modules.xml
-/.idea/victoria-website.iml
 .vscode/launch.json
 .idea/
 CLAUDE.md

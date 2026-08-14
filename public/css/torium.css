@@ -78,18 +78,6 @@ body {
     flex: 2;
 }
 
-.flex-boxes {
-    display: none;
-    flex: 1;
-}
-
-@media (min-width: 800px) {
-    .flex-boxes {
-        display: flex;
-        flex-direction: row;
-    }
-}
-
 @media (max-width: 720px) {
     .container {
         flex-direction: column;
