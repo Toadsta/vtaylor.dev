@@ -12,6 +12,54 @@
     <link rel="stylesheet" href="<%= basePath %>/css/torium-misc.css?v=<%= assetVersion %>">
     <link rel="stylesheet" href="<%= basePath %>/css/torium-content.css?v=<%= assetVersion %>">
     <link rel="stylesheet" href="<%= basePath %>/css/torium-about.css?v=<%= assetVersion %>">
+    <style>
+        :root {
+            --color-bg: <%= theme.light.bg %>;
+            --color-panel-bg: <%= theme.light.panelBg %>;
+            --color-text: <%= theme.light.text %>;
+            --color-text-muted: <%= theme.light.textMuted %>;
+            --color-badge-bg: <%= theme.light.badgeBg %>;
+            --color-badge-text: <%= theme.light.badgeText %>;
+            --color-accent: <%= theme.light.accent %>;
+            --color-footer-link: <%= theme.light.footerLink %>;
+            color-scheme: light;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: <%= theme.dark.bg %>;
+                --color-panel-bg: <%= theme.dark.panelBg %>;
+                --color-text: <%= theme.dark.text %>;
+                --color-text-muted: <%= theme.dark.textMuted %>;
+                --color-badge-bg: <%= theme.dark.badgeBg %>;
+                --color-badge-text: <%= theme.dark.badgeText %>;
+                --color-accent: <%= theme.dark.accent %>;
+                --color-footer-link: <%= theme.dark.footerLink %>;
+                color-scheme: dark;
+            }
+        }
+        :root[data-theme="light"] {
+            --color-bg: <%= theme.light.bg %>;
+            --color-panel-bg: <%= theme.light.panelBg %>;
+            --color-text: <%= theme.light.text %>;
+            --color-text-muted: <%= theme.light.textMuted %>;
+            --color-badge-bg: <%= theme.light.badgeBg %>;
+            --color-badge-text: <%= theme.light.badgeText %>;
+            --color-accent: <%= theme.light.accent %>;
+            --color-footer-link: <%= theme.light.footerLink %>;
+            color-scheme: light;
+        }
+        :root[data-theme="dark"] {
+            --color-bg: <%= theme.dark.bg %>;
+            --color-panel-bg: <%= theme.dark.panelBg %>;
+            --color-text: <%= theme.dark.text %>;
+            --color-text-muted: <%= theme.dark.textMuted %>;
+            --color-badge-bg: <%= theme.dark.badgeBg %>;
+            --color-badge-text: <%= theme.dark.badgeText %>;
+            --color-accent: <%= theme.dark.accent %>;
+            --color-footer-link: <%= theme.dark.footerLink %>;
+            color-scheme: dark;
+        }
+    </style>
 </head>
 
 <body>
@@ -59,11 +107,18 @@
                 <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"></rect><line x1="8" y1="20" x2="16" y2="20"></line><line x1="12" y1="16" x2="12" y2="20"></line></svg>
             </a>
             <% } %>
+            <button id="theme-switcher" aria-label="Switch color theme">
+                <svg viewBox="0 0 24 24"><path d="M12 3C7 3 3 6.6 3 11c0 3 2 5 4.5 5H9a1.5 1.5 0 011.5 1.5c0 .5-.2.9-.5 1.3-.3.4-.5.8-.5 1.2 0 1 .8 2 2.5 2 5 0 9-4 9-9 0-5-4-9-9-9z"></path><circle cx="7.5" cy="10.5" r="1"></circle><circle cx="10.5" cy="7" r="1"></circle><circle cx="15" cy="7" r="1"></circle><circle cx="17.5" cy="10.5" r="1"></circle></svg>
+            </button>
             <button id="theme-toggle" aria-label="Toggle dark mode"></button>
         </div>
     </footer>
 </div>
 
+<script>
+    window.__THEMES = <%- JSON.stringify(themes) %>;
+    window.__CURRENT_THEME = <%- JSON.stringify(themes[settings.theme] ? settings.theme : 'birch') %>;
+</script>
 <script src="<%= basePath %>/javascript/themeToggle.js?v=<%= assetVersion %>"></script>
 
 </body>

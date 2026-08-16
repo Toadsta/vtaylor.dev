@@ -3,6 +3,7 @@ const path = require('path');
 require('dotenv').config();
 const { loadContent, loadSingle } = require('./lib/content');
 const { errorPages } = require('./lib/errors');
+const { getTheme, THEMES } = require('./lib/themes');
 
 const app = express();
 const port = process.env.PORT || 3000; // Default to 3000 if PORT is not set
@@ -22,6 +23,8 @@ app.set('views', path.join(__dirname, 'views'));
 // Make settings (name, tagline, socials, bio, etc.) available to every template
 app.use((req, res, next) => {
     res.locals.settings = loadSingle(path.join(__dirname, 'content/settings.md'));
+    res.locals.theme = getTheme(res.locals.settings.theme);
+    res.locals.themes = THEMES;
     res.locals.basePath = '';
     next();
 });

@@ -6,6 +6,8 @@ github: "https://github.com/Toadsta"
 linkedin: "https://www.linkedin.com/in/toria-taylor/"
 email: "hello@vtaylor.dev"
 domain: "vtaylor.dev"
+# Color theme, applied to both light and dark mode. One of: birch, nord, umber, catppuccin, rosepine, everforest. See THEMES.md for previews.
+theme: "rosepine"
 secretLink: "https://vicos.vtaylor.dev/"
 ---
 Hi! I'm Victoria, a newly qualified computer science teacher in the West Midlands, now in the final year of the Teach First programme.

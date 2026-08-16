@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { loadContent, loadSingle } = require('./lib/content');
 const { errorPages } = require('./lib/errors');
+const { getTheme, THEMES } = require('./lib/themes');
 
 const outDir = path.join(__dirname, 'dist');
 const viewsDir = path.join(__dirname, 'views');
@@ -11,6 +12,7 @@ const publicDir = path.join(__dirname, 'public');
 const assetVersion = process.env.GITHUB_SHA ? process.env.GITHUB_SHA.slice(0, 8) : String(Date.now());
 
 const settings = loadSingle(path.join(__dirname, 'content/settings.md'));
+const theme = getTheme(settings.theme);
 const repoName = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split('/')[1] : '';
 const basePath = settings.domain ? '' : repoName ? `/${repoName}` : '';
 const posts = loadContent(path.join(__dirname, 'content/blog'));
@@ -44,7 +46,7 @@ fs.mkdirSync(outDir, { recursive: true });
 for (const page of pages) {
     const html = ejs.render(
         fs.readFileSync(path.join(viewsDir, 'base.ejs'), 'utf8'),
-        { body: page.body, title: page.title, assetVersion, settings, basePath, ...(page.locals || {}) },
+        { body: page.body, title: page.title, assetVersion, settings, theme, themes: THEMES, basePath, ...(page.locals || {}) },
         { views: [viewsDir], filename: path.join(viewsDir, 'base.ejs') }
     );
     const outPath = path.join(outDir, page.file);
