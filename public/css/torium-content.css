@@ -162,6 +162,12 @@ p{
     box-shadow: 18px 0 0 #febc2e, 36px 0 0 #28c840;
 }
 
+.post-body img {
+    max-width: 100%;
+    border-radius: 6px;
+    margin: 0 0 14px;
+}
+
 .post-body pre code {
     display: block;
     font-family: "Fira Mono", monospace;
